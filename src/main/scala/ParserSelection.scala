@@ -18,8 +18,6 @@ object ParserSelection {
         case "bge" =>   (IParser, "000111")
         case "bltu" =>  (IParser, "110000")
         case "bgeu" =>  (IParser, "110001")
-        case "bltu" =>  (IParser, "110010")
-        case "bgeu" =>  (IParser, "110011")
 
         case "add" =>   (RParser, "100000")
         case "sub" =>   (RParser, "100010")
