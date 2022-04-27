@@ -18,12 +18,10 @@ val hex = Assembler.parseToHex(lines) // For hex string output
 Write MIPS commands in a file under the `res` folder.
 
 ```scala
-val resource = Source.fromResource("MY_FILE.txt")
-val hex = resource.getLines.toList.map(Assembler.parseLineHex)
-val writer = new PrintWriter(new File("res/output.txt" ))
-hex.foreach( instr => writer.write(instr + "\n") )
-writer.close()
+Assembler.parseFile("MY_FILE.txt", "output.txt")
 ```
+
+In this case, you would find the output file under `res/output.txt`.
 
 ## Support
 

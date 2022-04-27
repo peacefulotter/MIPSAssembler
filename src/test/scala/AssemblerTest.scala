@@ -1,9 +1,6 @@
 
 import org.scalatest.funsuite.AnyFunSuite
 
-import java.io.{File, PrintWriter}
-import scala.io.Source
-
 
 
 class AssemblerTest extends AnyFunSuite {
@@ -17,10 +14,6 @@ class AssemblerTest extends AnyFunSuite {
     }
 
     test("assembler with file") {
-        val resource = Source.fromResource("test.txt")
-        val hex = resource.getLines.toList.map(Assembler.parseLineHex)
-        val writer = new PrintWriter(new File("res/output.txt" ))
-        hex.foreach( instr => writer.write(instr + "\n") )
-        writer.close()
+        Assembler.parseFile("test.txt", "output.txt")
     }
 }

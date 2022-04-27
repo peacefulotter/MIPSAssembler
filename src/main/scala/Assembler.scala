@@ -1,4 +1,6 @@
+import java.io.{File, PrintWriter}
 import java.math.BigInteger
+import scala.io.Source
 
 object Assembler {
 
@@ -22,4 +24,12 @@ object Assembler {
 
     def parseToHex(lines: List[String]): List[Hex] =
         parseToBinary(lines).map(toHex)
+
+    def parseFile(inputFilename: String, outputFilename: String) = {
+        val resource = Source.fromResource(inputFilename)
+        val hex = resource.getLines.toList.map(Assembler.parseLineHex)
+        val writer = new PrintWriter(new File("res/" + outputFilename))
+        hex.foreach( instr => writer.write(instr + "\n") )
+        writer.close()
+    }
 }
