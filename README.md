@@ -25,6 +25,8 @@ hex.foreach( instr => writer.write(instr + "\n") )
 writer.close()
 ```
 
+## Support
+
 #### List of supported instructions
 
  - addi
