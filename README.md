@@ -3,6 +3,28 @@
 Works with the most MIPS instructions and supports all formats (I, R, J).
 Supports for new instructions can be easily added by editing ParserSelection.scala
 
+## How to Use
+
+### From List
+
+```scala
+val lines = List("MY_INSTRUCTION_1", "MY_INSTRUCTION_2", ...)
+val bin = Assembler.parseToBinary(lines) // For binary string output
+val hex = Assembler.parseToHex(lines) // For hex string output
+```
+
+### From File
+
+Write MIPS commands in a file under the `res` folder.
+
+```scala
+val resource = Source.fromResource("MY_FILE.txt")
+val hex = resource.getLines.toList.map(Assembler.parseLineHex)
+val writer = new PrintWriter(new File("res/output.txt" ))
+hex.foreach( instr => writer.write(instr + "\n") )
+writer.close()
+```
+
 #### List of supported instructions
 
  - addi
