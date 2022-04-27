@@ -1,0 +1,4 @@
+add r1 r2 r3
+addi r2 r2 -5
+lw r4 zero 4
+sw r6 t2 8
