@@ -32,24 +32,19 @@ In this case, you would find the output file under `res/output.txt`.
  - `ori`
  - `xori`
  - `slli`
- - `srli`
- - `slti`
- - `sltiu`
+ - `srlv`
+ - `sltv`
  - `beq`
  - `bne`
  - `blt`
  - `bge`
- - `bltu`
- - `bgeu`
  - `add`
  - `sub`
  - `and`
  - `or`
  - `xor`
- - `sll`
- - `srl`
  - `slt`
- - `sltu`
+ - `slti`
  - `lw`
  - `sw`
 
