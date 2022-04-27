@@ -15,8 +15,8 @@ val hex = Assembler.parseToHex(lines) // For hex string output
 
 ### From File
 
-Write MIPS commands in a file under the `res` folder.
-
+ - Write MIPS commands in a file under the `res` folder.
+ - Scala code:
 ```scala
 Assembler.parseFile("MY_FILE.txt", "output.txt")
 ```
