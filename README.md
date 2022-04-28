@@ -9,7 +9,7 @@ Supports for new instructions can be easily added by editing ParserSelection.sca
 
 ```scala
 val lines = List("MY_INSTRUCTION_1", "MY_INSTRUCTION_2", ...)
-val bin = Assembler.parseToBinary(lines) // For binary string output
+val bin = Assembler.parseToBin(lines) // For binary string output
 val hex = Assembler.parseToHex(lines) // For hex string output
 ```
 
@@ -27,31 +27,42 @@ In this case, you would find the output file under `res/output.txt`.
 
 #### List of supported instructions
 
+ - `nop`
  - `addi`
+ - `addiu`
  - `andi`
  - `ori`
  - `xori`
- - `slli`
- - `srlv`
- - `sltv`
+ - `slti`
+ - `sltiu`
  - `beq`
  - `bne`
  - `blt`
  - `bge`
  - `add`
+ - `addu`
  - `sub`
+ - `subu`
  - `and`
  - `or`
  - `xor`
+ - `sllv`
+ - `srlv`
  - `slt`
- - `slti`
+ - `sltu`
+ - `srav`
+ - `sll`
+ - `srl`
+ - `sra`
  - `lw`
  - `sw`
+ - `j`
+ - `jal`
 
 #### List of supported formats
 
  - Registers: `t`, `r` and `zero` (ex: `t1`, `r6`)
  - Immediate: `int` and `hex` (ex: `42`, `0x666`)
  - LW and SW commands are used the same way as any I-instructions, it does NOT support the following format:
-   - `lw/sw t2 0x4(t3)`
-   - Instead use: `lw/sw t2 t3 0x4`
+   - `lw/sw t2 0x4(zero)`
+   - Instead use: `lw/sw t2 0x4` (immediate = base + offset)

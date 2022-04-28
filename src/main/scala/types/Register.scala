@@ -1,3 +1,5 @@
+package types
+
 object Register {
 
     def width = 5

@@ -1,4 +1,11 @@
-add r1 r2 r3
-addi r2 r2 -5
-lw r4 zero 4
-sw r6 t2 8
+main:
+	lw $t2, 25  # Load immediate value (25)
+dummy_branch:
+	lw $t3, 0xF # Load the word stored in value (see bottom)
+my_branch:
+	add $t4, $t2, $t3   # Add
+	sub $t5, $t2, $t3   # Subtract
+	sw $t5, 0x15           # Store the answer in Z (declared at the bottom)
+	slti t4 t3 0x12
+	beq t4, zero my_branch
+
