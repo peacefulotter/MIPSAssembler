@@ -1,6 +1,6 @@
 
 
-Works with the most MIPS instructions and supports all formats (I, R, J).
+Works with most MIPS instructions (see list below) and supports all formats (I, R, J).
 Supports for new instructions can be easily added by editing ParserSelection.scala
 
 ## How to Use
